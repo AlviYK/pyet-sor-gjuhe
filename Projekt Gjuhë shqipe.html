@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+<meta charset="UTF-8">
+<title>Pyetësor për Adoleshentët – Rrjetet Sociale dhe Gjuhë</title>
+<style>
+  body { font-family: Arial, sans-serif; background: #f4f6f8; margin:0; padding:0; }
+  .container { max-width: 800px; margin: 30px auto; background: #fff; padding: 25px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+  h1,h2 { color: #2c3e50; }
+  label { display:block; margin-top:15px; font-weight:bold; }
+  select, textarea, input { width:100%; padding:8px; margin-top:5px; border-radius:4px; border:1px solid #ccc; }
+  textarea { resize:vertical; }
+  button { margin-top:25px; padding:12px 20px; background:#1abc9c; border:none; color:white; font-size:16px; border-radius:5px; cursor:pointer; }
+  button:hover { background:#16a085; }
+  .result { margin-top:30px; padding:20px; background:#ecf9f6; border-radius:6px; display:none; }
+  .footer { margin-top:30px; font-size:14px; color:#555; text-align:center; }
+</style>
+</head>
+<body>
+<div class="container">
+<h1>Pyetësor – Si përdorim rrjetet sociale dhe gjuhën shqipe</h1>
+
+<!-- PYETËSORI FILLON KËTU -->
+
+<label for="q1">1. Cilin variant do të dërgoje në chat?</label>
+<select id="q1">
+  <option value="0">ca po bo sot</option>
+  <option value="2">çfarë po bën sot</option>
+</select>
+
+<label for="q2">2. Kur shkruan shpejt, zakonisht:</label>
+<select id="q2">
+  <option value="0"> nuk shkruaj me ë dhe ç</option>
+  <option value="2">përpiqem t’i përdor</option>
+  <option value="1">nuk e kam idenë</option>
+</select>
+
+<label for="q3">3. Cila duket më “normale” për ty në Instagram?</label>
+<select id="q3">
+  <option value="0">Sot 🔥 </option>
+  <option value="1">shume mire sot 🔥</option>
+  <option value="2">shumë mirë sot</option>
+</select>
+
+<label for="q4">4. Nëse po i shkruan një shoku që do të vonohesh, cilin mesazh do të përdorje?</label>
+<select id="q4">
+  <option value="0">Comming</option>
+  <option value="1">Jam nis</option>
+  <option value="1">🏃‍♂️</option>
+  <option value="2">Po vij se jam pak me vonesë</option>
+</select>
+
+<label for="q5">5. Po bën një story: Cilin caption zgjedh?</label>
+<select id="q5">
+  <option value="0">crazy dayyy 😂🔥</option>
+  <option value="2">ditë e lodhshme por e bukur</option>
+  <option value="1">s’vendos caption fare</option>
+</select>
+
+<label for="q6">6. Cila fjali është më e saktë?</label>
+<select id="q6">
+  <option value="0">po bojm challenge neser</option>
+  <option value="1">po bëjm Sfidë neser</option>
+  <option value="2">po bëjmë një sfidë nesër</option>
+</select>
+
+<label for="q7">7. Cila fjalë është më shqip?</label>
+<select id="q7">
+  <option value="0">Zgjidh një opsion</option>
+  <option value="1">content</option>
+  <option value="2">përmbajtje</option>
+</select>
+
+<label for="q8">8. Nëse shkruan “viral”, çfarë nënkupton?</label>
+<select id="q8">
+  <option value="2">diçka që përhapet shumë shpejt</option>
+  <option value="1">diçka e rrezikshme</option>
+  <option value="0">s’e di, thjesht e përdor</option>
+</select>
+
+<label for="q9">9. Nëse mësuesi yt do të lexonte chat-et e tua:</label>
+<select id="q9">
+  <option value="0">do isha në siklet 😬</option>
+  <option value="2">s’do kishte problem</option>
+  <option value="1">varet kujt ia kam dërguar</option>
+</select>
+
+<label for="q10">10. A mendon se mënyra si shkruan në chat:</label>
+<select id="q10">
+  <option value="1">mbetet vetëm aty</option>
+  <option value="2">ndikon edhe në detyra / teste</option>
+  <option value="0">nuk e kam menduar kurrë</option>
+</select>
+
+<label for="q12a">12a. Zëvendëso me fjalë shqip:Trend </label>
+<input type="text" id="q12a">
+<label for="q12b">12b. Zëvendëso me fjalë shqip:Story </label>
+<input type="text" id="q12b">
+<label for="q12c">12c. Zëvendëso me fjalë shqip:DM </label>
+<input type="text" id="q12c">
+<label for="q12d">12d. Zëvendëso me fjalë shqip:Reels </label>
+<input type="text" id="q12d">
+
+<label for="q13">13. Nëse të paguajnë 5€, a do shkruaje pa gabime në rrjete sociale për 1 javë?</label>
+<select id="q13">
+  <option value="2">po, patjetër</option>
+  <option value="1">ndoshta</option>
+  <option value="0">jo, s’ia vlen 😄</option>
+</select>
+
+<label for="q14">14. Një emoji që përshkruan mënyrën si shkruan:</label>
+<select id="q14">
+  <option value="0">Zgjidh një opsion</option>
+  <option value="2">😎</option>
+  <option value="1">😅</option>
+  <option value="0">😬</option>
+  <option value="3">📚</option>
+</select>
+
+<button onclick="calculateResult()">Shfaq rezultatin</button>
+
+<div class="result" id="result">
+  <h2>Rezultati yt</h2>
+  <p id="score"></p>
+  <p id="level"></p>
+  <p id="message"></p>
+</div>
+<div class="footer">Mini-platformë edukative – Gjuhë Shqipe & Media Digjitale</div>
+
+<script>
+function calculateResult() {
+  let score = 0;
+
+  for (let i = 1; i <= 14; i++) {
+    let el = document.getElementById('q' + i);
+    if(el && el.value !== undefined && el.value !== null) {
+      let v = parseInt(el.value);
+      if(!isNaN(v)) score += v;
+    }
+  }
+
+  let q12a = document.getElementById('q12a');
+  let q12b = document.getElementById('q12b');
+  let q12c = document.getElementById('q12c');
+  let q12d = document.getElementById('q12d');
+
+  if(q12a && ['prirje','tendencë'].includes(q12a.value.trim().toLowerCase())) score += 1;
+  if(q12b && ['histori','rrëfim'].includes(q12b.value.trim().toLowerCase())) score += 1;
+  if(q12c && ['mesazh privat','mesazh direkt'].includes(q12c.value.trim().toLowerCase())) score += 1;
+  if(q12d && ['video të shkurtra','video e shkurtër'].includes(q12d.value.trim().toLowerCase())) score += 1;
+
+  let level = '';
+  let message = '';
+
+  if(score >= 25){
+    level = 'Niveli 5: Ekspert';
+    message = 'Shkrimi yt në rrjetet sociale është shumë i saktë dhe i pasur me gjuhë shqipe.';
+  } else if(score >= 20){
+    level = 'Niveli 4: I mirë';
+    message = 'Ke një përdorim të mirë të gjuhës, por mund të përmirësosh disa detaje.';
+  } else if(score >= 15){
+    level = 'Niveli 3: Mesatar';
+    message = 'Përdorimi yt është i pranueshëm, por ka hapësira për të mësuar më shumë.';
+  } else if(score >= 10){
+    level = 'Niveli 2: Fillestar';
+    message = 'Përdorimi yt shpesh nuk është i saktë, përpiqu të kushtosh më shumë vëmendje.';
+  } else {
+    level = 'Niveli 1: Në përmirësim';
+    message = 'Duhet shumë përpjekje për të shkruar saktë në rrjetet sociale.';
+  }
+
+  document.getElementById('score').innerText = 'Pikët totale: ' + score;
+  document.getElementById('level').innerText = level;
+  document.getElementById('message').innerText = message;
+  document.getElementById('result').style.display = 'block';
+}
+</script>
+</body>
+</html>
